@@ -158,8 +158,8 @@ app.get('/health', (req, res) => {
     res.json({ status: 'ok', message: 'Payevo Backend rodando!' });
 });
 
-// Inicia o servidor
-app.listen(PORT, () => {
+// Inicia o servidor - Railway precisa escutar em 0.0.0.0
+app.listen(PORT, '0.0.0.0', () => {
     console.log(`🚀 Servidor rodando na porta ${PORT}`);
     console.log(`📡 Endpoints disponíveis:`);
     console.log(`   POST /api/create-pix - Criar transação PIX`);
